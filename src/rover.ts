@@ -2,7 +2,6 @@ import * as utils from './utils';
 
 export const marsRover = (positionData: positionData, instructions: string, maxSize = 5) => {
     const newPositionData = {...positionData}
-    // const plateau = utils.createPlateau(5)
     for (let i = 0; i < instructions.length; i++) {
         switch(instructions[i]) {
             case "L":
