@@ -24,9 +24,9 @@ export const marsRover = (positionData: positionData, instructions: string, maxS
                     case "W":
                         newPositionData.y--
                         break
+                    //throw error
                 }
                 break
-                //throw error
             default:
                 //throw error
         }
