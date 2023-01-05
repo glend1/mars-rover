@@ -2,9 +2,7 @@ export const createPlateau = (size: number): string[][] => {
     return Array(size).fill(Array(size).fill(""))
 }
 
-type directions = "N" | "E" | "S" | "W"
-
-const directions = ["N", "E", "S", "W"]
+const directions: directions[] = ["N", "E", "S", "W"]
 
 export const rotateLeft = (direction: directions) => {
     if (direction === "N") return directions[3]
