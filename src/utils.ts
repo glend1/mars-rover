@@ -12,3 +12,5 @@ export const rotateRight = (direction: directions) => {
 }
 
 export const validPosition = (positionData: positionData, maxSize: number) => positionData.x > maxSize || positionData.y > maxSize || positionData.x < 0 || positionData.y < 0 ? false : true
+
+export const validInstructions = (instructions: string) => !/[^RML]/i.test(instructions)
