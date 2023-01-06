@@ -20,7 +20,7 @@ export const marsRover = (positionData: positionData, instructions: string, maxS
     return newPositionData
 }
 
-function moveRover(newPositionData: positionData, maxSize: number) {
+const moveRover = (newPositionData: positionData, maxSize: number) => {
     switch (newPositionData.direction) {
         case "N":
             newPositionData.y++
