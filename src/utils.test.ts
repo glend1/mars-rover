@@ -59,3 +59,11 @@ describe("validInstructions", () => {
       expect(utils.validInstructions("RmL")).toEqual(true);
     });
 })
+describe("toUpperAndTrim", () => {
+    it("Should remove excess whitespace", () => {
+      expect(utils.toUpperAndTrim("   R    ")).toEqual("R");
+    });
+    it("Should convert the string to uppercase", () => {
+      expect(utils.toUpperAndTrim("m")).toEqual("M");
+    });
+})
