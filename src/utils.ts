@@ -1,8 +1,7 @@
 const directions: directions[] = ["N", "E", "S", "W"]
 
 export const rotateLeft = (direction: directions) => {
-    //this should be the last element
-    if (direction === "N") return directions[3]
+    if (direction === "N") return directions[directions.length - 1]
     return directions[directions.indexOf(direction) - 1]
 }
 
