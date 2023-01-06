@@ -29,3 +29,21 @@ describe("rotateRight", () => {
         expect(utils.rotateRight("W")).toStrictEqual("N");
       });
   })
+
+  describe("validPosition", () => {
+    it("Should return false if x is too big", () => {
+      expect(utils.validPosition({x: 7, y: 3, direction: "N"}, 5)).toEqual(false);
+    });
+    it("Should return false if y is too big", () => {
+      expect(utils.validPosition({x: 3, y: 7, direction: "N"}, 5)).toEqual(false);
+    });
+    it("Should return false if x is too small", () => {
+      expect(utils.validPosition({x: -3, y: 3, direction: "N"}, 5)).toEqual(false);
+    });
+    it("Should return false if y is too big", () => {
+      expect(utils.validPosition({x: 3, y: -3, direction: "N"}, 5)).toEqual(false);
+    });
+    it("Should return true if values are within range", () => {
+      expect(utils.validPosition({x: 3, y: 3, direction: "N"}, 5)).toEqual(true);
+    });
+})

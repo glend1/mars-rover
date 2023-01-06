@@ -1,6 +1,7 @@
 import * as utils from './utils';
 
 export const marsRover = (positionData: positionData, instructions: string, maxSize = 5) => {
+    if (!utils.validPosition(positionData, maxSize)) throw "Rover could not land, invalid coordinates given."
     const newPositionData = {...positionData}
     for (let i = 0; i < instructions.length; i++) {
         switch(instructions[i]) {
@@ -25,7 +26,7 @@ export const marsRover = (positionData: positionData, instructions: string, maxS
                         newPositionData.x--
                         break
                     }
-                    //throw error
+                    if (!utils.validPosition(newPositionData, maxSize)) throw "Rover was lost, presumably to green men."
                 break
         }
     }

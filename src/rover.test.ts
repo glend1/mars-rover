@@ -9,4 +9,10 @@ describe("MarsRover", () => {
   it("Should move the rover back to starting location/direction", () => {
     expect(marsRover({x: 3, y: 3, direction:"N"}, "LMLMRRMRML")).toStrictEqual({"direction": "N", "x": 3, "y": 3});
   });
+  it("Should throw an error if the rover moves out of bounds", () => {
+    expect(() => marsRover({x: 3, y: 3, direction:"N"}, "MMM")).toThrow("Rover was lost, presumably to green men.");
+  });
+  it("Should throw an error if the rover cannot land within bounds", () => {
+    expect(() => marsRover({x: 7, y: 3, direction:"N"}, "M")).toThrow("Rover could not land, invalid coordinates given.");
+  });
 });
