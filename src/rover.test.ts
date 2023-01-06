@@ -15,4 +15,7 @@ describe("MarsRover", () => {
   it("Should throw an error if the rover cannot land within bounds", () => {
     expect(() => marsRover({x: 7, y: 3, direction:"N"}, "M")).toThrow("Rover could not land, invalid coordinates given.");
   });
+  it("Should throw an error if the instructions are invalid", () => {
+    expect(() => marsRover({x: 3, y: 3, direction:"N"}, "g")).toThrow("Rover cannot follow instructions as they contain illegal operatations.");
+  });
 });

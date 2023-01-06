@@ -3,6 +3,7 @@ import * as utils from './utils';
 export const marsRover = (positionData: positionData, instructions: string, maxSize = 5) => {
     if (!utils.validPosition(positionData, maxSize)) throw "Rover could not land, invalid coordinates given."
     instructions = utils.toUpperAndTrim(instructions)
+    if (!utils.validInstructions(instructions)) throw "Rover cannot follow instructions as they contain illegal operatations."
     const newPositionData = {...positionData}
     for (let i = 0; i < instructions.length; i++) {
         switch(instructions[i]) {
