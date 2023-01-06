@@ -12,23 +12,27 @@ export const marsRover = (positionData: positionData, instructions: string, maxS
                 newPositionData.direction = utils.rotateRight(newPositionData.direction)
                 break
             case "M":
-                switch (newPositionData.direction) {
-                    case "N":
-                        newPositionData.y++
-                        break
-                    case "E":
-                        newPositionData.x++
-                        break
-                    case "S":
-                        newPositionData.y--
-                        break
-                    case "W":
-                        newPositionData.x--
-                        break
-                    }
-                    if (!utils.validPosition(newPositionData, maxSize)) throw "Rover was lost, presumably to green men."
+                moveRover(newPositionData, maxSize)
                 break
         }
     }
     return newPositionData
+}
+
+function moveRover(newPositionData: positionData, maxSize: number) {
+    switch (newPositionData.direction) {
+        case "N":
+            newPositionData.y++
+            break;
+        case "E":
+            newPositionData.x++
+            break;
+        case "S":
+            newPositionData.y--
+            break;
+        case "W":
+            newPositionData.x--
+            break;
+    }
+    if (!utils.validPosition(newPositionData, maxSize)) throw "Rover was lost, presumably to green men."
 }
